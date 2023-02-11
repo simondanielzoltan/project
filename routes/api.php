@@ -21,6 +21,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('ping', function () {
+Route::middleware('auth:sanctum')->get('ping', function () {
     return "pong";
 });

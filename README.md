@@ -13,13 +13,27 @@ It is a demo project with Laravel backend and Vue.js frontend.
     laravelsail/php80-composer:latest \
     composer install --ignore-platform-reqs
     ```
-2. ``` cp .env.example .env``` and configue .env
-3. ``` sail up -d ```
-4. ``` npm i ```
-5. ``` sail artisian key:generate ```
-6. ``` sail artisian migrate ```
-7. ``` sail artisian serve ```
-8. ``` npm run dev ```
+2. ```console
+    cp .env.example .env
+    ``` 
+3. ```console
+    sail up -d 
+    ```
+4. ```console
+    npm i 
+    ```
+5. ```console
+    sail artisian key:generate 
+    ```
+6. ```console
+    sail artisian migrate 
+    ```
+7. ```console
+    sail artisian serve 
+    ```
+8. ```console
+    npm run dev 
+    ```
 
 ## Autentication based on
 https://techvblogs.com/blog/spa-authentication-laravel-9-sanctum-vue3-vite

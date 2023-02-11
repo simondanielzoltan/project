@@ -6,3 +6,7 @@ It is a demo project with Laravel backend and Vue.js frontend.
 
 ## Autentication based on
 https://techvblogs.com/blog/spa-authentication-laravel-9-sanctum-vue3-vite
+
+## License
+
+[MIT](https://opensource.org/licenses/MIT)

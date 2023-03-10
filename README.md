@@ -10,29 +10,29 @@ It is a demo project with Laravel backend and Vue.js frontend.
     -u "$(id -u):$(id -g)" \
     -v $(pwd):/opt \
     -w /opt \
-    laravelsail/php80-composer:latest \
+    laravelsail/php82-composer:latest \
     composer install --ignore-platform-reqs
     ```
 2. ```console
     cp .env.example .env
-    ``` 
+    ```
 3. ```console
-    sail up -d 
+    sail up -d
     ```
 4. ```console
-    npm i 
+    npm i
     ```
 5. ```console
-    sail artisian key:generate 
+    sail artisian key:generate
     ```
 6. ```console
-    sail artisian migrate 
+    sail artisian migrate
     ```
 7. ```console
-    sail artisian serve 
+    sail artisian serve
     ```
 8. ```console
-    npm run dev 
+    npm run dev
     ```
 
 ## Autentication based on

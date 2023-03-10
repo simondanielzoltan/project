@@ -40,12 +40,8 @@
                   class="dropdown-menu dropdown-menu-end"
                   aria-labelledby="navbarDropdownMenuLink"
                 >
-                  <a
-                    class="dropdown-item"
-                    href="javascript:void(0)"
-                    @click="logout"
-                    >Logout</a
-                  >
+                  <a class="dropdown-item" @click="profile">Profile</a>
+                  <a class="dropdown-item" @click="logout">Logout</a>
                 </div>
               </li>
             </ul>
@@ -77,6 +73,10 @@ export default {
         this.signOut();
         this.$router.push({ name: "login" });
       });
+    },
+    profile() {
+      console.log("asd");
+      this.$router.push("/profile");
     },
   },
 };

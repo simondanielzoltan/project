@@ -4,6 +4,7 @@ import store from '@/store'
 /* Guest Component */
 const Login = () => import('@/components/Login.vue')
 const Register = () => import('@/components/Register.vue')
+const Profile = () => import('@/components/Profile.vue')
 /* Guest Component */
 
 /* Layouts */
@@ -48,7 +49,15 @@ const routes = [
                 meta: {
                     title: `Dashboard`
                 }
-            }
+            },
+            {
+                name: "profile",
+                path: "/profile",
+                component: Profile,
+                meta: {
+                    title: `Profile`
+                }
+            },
         ]
     }
 ]

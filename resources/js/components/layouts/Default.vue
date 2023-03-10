@@ -2,7 +2,7 @@
   <div>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#" target="_blank">Project</a>
+        <a class="navbar-brand">Project</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -18,7 +18,7 @@
           <ul class="navbar-nav me-auto">
             <li class="nav-item">
               <router-link :to="{ name: 'dashboard' }" class="nav-link"
-                >Home <span class="sr-only">(current)</span></router-link
+                >Home</router-link
               >
             </li>
           </ul>
@@ -58,7 +58,7 @@
 <script>
 import { mapActions } from "vuex";
 export default {
-  name: "default-layout",
+  name: "default",
   data() {
     return {
       user: this.$store.state.auth.user,

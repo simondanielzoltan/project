@@ -8,7 +8,7 @@ const Profile = () => import('@/components/Profile.vue')
 /* Guest Component */
 
 /* Layouts */
-const DahboardLayout = () => import('@/components/layouts/Default.vue')
+const Default = () => import('@/components/layouts/Default.vue')
 /* Layouts */
 
 /* Authenticated Component */
@@ -37,7 +37,7 @@ const routes = [
     },
     {
         path: "/",
-        component: DahboardLayout,
+        component: Default,
         meta: {
             middleware: "auth"
         },

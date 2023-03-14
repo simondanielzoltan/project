@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Http\JsonResponse;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -16,7 +17,7 @@ class AuthController extends Controller
      * @param Request $request
      * @return \Illuminate\Http\JsonResponse
      */
-    public function createUser(Request $request): \Illuminate\Http\JsonResponse
+    public function createUser(Request $request): JsonResponse
     {
         try {
             //Validated
@@ -47,10 +48,10 @@ class AuthController extends Controller
                 'token' => $user->createToken("API TOKEN")->plainTextToken
             ], 200);
 
-        } catch (\Throwable $th) {
+        } catch (\Throwable $e) {
             return response()->json([
                 'status' => false,
-                'message' => $th->getMessage()
+                'message' => $e->getMessage()
             ], 500);
         }
     }
@@ -60,7 +61,7 @@ class AuthController extends Controller
      * @param Request $request
      * @return \Illuminate\Http\JsonResponse
      */
-    public function loginUser(Request $request): \Illuminate\Http\JsonResponse
+    public function loginUser(Request $request): JsonResponse
     {
         try {
             $validateUser = Validator::make($request->all(),
@@ -92,10 +93,10 @@ class AuthController extends Controller
                 'token' => $user->createToken("API TOKEN")->plainTextToken
             ], 200);
 
-        } catch (\Throwable $th) {
+        } catch (\Throwable $e) {
             return response()->json([
                 'status' => false,
-                'message' => $th->getMessage()
+                'message' => $e->getMessage()
             ], 500);
         }
     }

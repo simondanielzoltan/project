@@ -75,7 +75,6 @@ export default {
       });
     },
     profile() {
-      console.log("asd");
       this.$router.push("/profile");
     },
   },

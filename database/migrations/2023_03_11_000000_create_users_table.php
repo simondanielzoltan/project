@@ -15,11 +15,15 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
+            $table->string('first_name');
+            $table->string('last_name');
+            $table->string('address');
+            $table->unsignedBigInteger('zip_code_id')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
+            $table->foreign('zip_code_id')->references('id')->on('zip_codes')->onDelete('cascade');
+            $table->string('email')->unique();
             $table->timestamps();
         });
     }

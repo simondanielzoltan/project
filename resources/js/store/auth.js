@@ -19,8 +19,9 @@ export default {
         SET_AUTHENTICATED(state, value) {
             state.authenticated = value
         },
+        // value keys: id, first_name, last_name, email
         SET_USER(state, value) {
-            value.name = value.first_name + ' ' + value.last_name
+            value.name = value.first_name && value.last_name ? value.name = value.first_name + ' ' + value.last_name : ''
             state.user = value
         }
     },

@@ -34,7 +34,7 @@
                   aria-haspopup="true"
                   aria-expanded="false"
                 >
-                  {{ user.name }}
+                  {{ authUser.name }}
                 </a>
                 <div
                   class="dropdown-menu dropdown-menu-end"
@@ -59,10 +59,10 @@
 import { mapActions } from "vuex";
 export default {
   name: "default",
-  data() {
-    return {
-      user: this.$store.state.auth.user,
-    };
+  computed: {
+    authUser() {
+      return this.$store.state.auth.user;
+    },
   },
   methods: {
     ...mapActions({

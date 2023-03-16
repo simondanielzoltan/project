@@ -84,6 +84,8 @@
 </template>
 
 <script>
+import { mapMutations } from "vuex";
+
 export default {
   name: "profile",
   data() {
@@ -99,10 +101,17 @@ export default {
           city: "",
         },
       },
-      authUser: this.$store.state.auth.user,
     };
   },
+  computed: {
+    authUser() {
+      return this.$store.state.auth.user;
+    },
+  },
   methods: {
+    ...mapMutations({
+      setUser: "auth/SET_USER",
+    }),
     updateProfile() {
       axios
         .put(`api/user/${this.authUser.id}`, {
@@ -114,6 +123,12 @@ export default {
         })
         .then(({ data }) => {
           this.user = data.data;
+          this.setUser({
+            id: this.user.id,
+            email: this.user.email,
+            first_name: this.user.firstName,
+            last_name: this.user.lastName,
+          });
         });
     },
   },

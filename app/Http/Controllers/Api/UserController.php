@@ -18,7 +18,7 @@ class UserController extends Controller
             'first_name' => $request->firstName,
             'last_name' => $request->lastName,
             'email' => $request->email,
-            'address' => $request->email,
+            'address' => $request->address,
         ]);
         $user->zipCode()->associate($request->zipCodeId);
         return new UserResource($user);

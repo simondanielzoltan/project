@@ -40,8 +40,12 @@
                   class="dropdown-menu dropdown-menu-end"
                   aria-labelledby="navbarDropdownMenuLink"
                 >
-                  <a class="dropdown-item" @click="profile">Profile</a>
-                  <a class="dropdown-item" @click="logout">Logout</a>
+                  <a class="dropdown-item cursor-pointer" @click="profile">
+                    Profile
+                  </a>
+                  <a class="dropdown-item cursor-pointer" @click="logout"
+                    >Logout</a
+                  >
                 </div>
               </li>
             </ul>
@@ -80,3 +84,8 @@ export default {
   },
 };
 </script>
+<style scoped>
+.cursor-pointer {
+  cursor: pointer;
+}
+</style>
